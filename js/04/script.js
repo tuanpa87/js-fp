@@ -8,7 +8,7 @@ users = [
 //modify data
 var storeUser  = function (arr, user) {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i].name.toLowerCase() === name.toLowerCase()) {
+    if (arr[i].name.toLowerCase() === user.name.toLowerCase()) {
       arr[i] = user;
       break;
     }
