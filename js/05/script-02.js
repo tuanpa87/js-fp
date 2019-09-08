@@ -1,3 +1,4 @@
+// Function Composition
 str = 'Innovation distinguishes between a leader and a follower.';
 
 const trim = str => str.replace(/^\s*|\s*$/g, '');
