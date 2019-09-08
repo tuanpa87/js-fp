@@ -1,33 +1,32 @@
-users = [
-  { name: "James", score: 30, tries: 1 },
-  { name: "Mary", score: 110, tries: 4 },
-  { name: "Henry", score: 80, tries: 3 }
-];
 
+var MAINAPP = (function(nsp) {
+  var currentUser = 0,
+      users = [{name: "James",score: 30,tries: 1}, {name: "Mary", score: 110,tries: 4}, {name: "Henry",score: 80,tries: 3}];
+      //-> this state and it is shared 
 
-//Oher Possible Solutions and the Problems
-var newScore = function(arr, name, amt) {
-  arr.forEach(function(val) {
-    if (val.name.toLowerCase() === name.toLowerCase()) {
-      val.score = val.score + amt;
-    }
-  });
-  return arr;
-};
+  var updateScore = function(newAmt) {
+      users[currentUser].score += newAmt;
+  };
 
-var newTries = function(arr, name) {
-  arr.forEach(function(val) {
-    if (val.name.toLowerCase() === name.toLowerCase()) {
-      val.tries++;
-    }
-  });
-  return arr;
-};
+  var returnUsers = function() {
+      return users;
+  };
 
-var newArray1 = newScore(users, "Henry", 30);
-var newArray2 = newTries(users, "Henry"); //same newArray1
+  var updateTries = function() {
+      users[currentUser].tries++;
+  };
 
+  var updateUser = function(newUser) {
+      currentUser = newUser;
+  };
 
+  nsp.updateUser = updateUser;
+  nsp.updateTries = updateTries;
+  nsp.updateScore = updateScore;
+  nsp.returnUsers = returnUsers;
+  return nsp;
+})(MAINAPP || {});
 
-var users = [{name: "James",score: 30,tries: 1}, {name: "Mary", score: 110,tries: 4}, {name: "Henry",score: 80,tries: 3}];
-
+setTimeout(function() {MAINAPP.updateUser(2);}, 300);
+setTimeout(function() {MAINAPP.updateScore(20);}, 100);
+setTimeout(function() {MAINAPP.updateTries();}, 200);
