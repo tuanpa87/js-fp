@@ -29,7 +29,7 @@ var getUser = function(arr, name) {
         if (val.name.toLowerCase() === name.toLowerCase()) {
             return val;
         } else {
-            return obj;
+            return obj; //null
         }
     }, null); 
 
