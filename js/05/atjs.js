@@ -50,7 +50,7 @@ const curry = (fn, arity = fn.length, nextCurried) =>
     var args = [...prevArgs, nextArg];
     console.log(args);
     return args.length >= arity
-      ? fn(args)
+      ? fn(...args)
       : nextCurried(args);
   })([]);
 
