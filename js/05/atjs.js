@@ -48,9 +48,9 @@ const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
 const curry = (fn, arity = fn.length, nextCurried) =>
   (nextCurried = prevArgs => nextArg => {
     var args = [...prevArgs, nextArg];
-    //console.log(args);
+    console.log(args);
     return args.length >= arity
-      ? fn(...args)
+      ? fn(args)
       : nextCurried(args);
   })([]);
 

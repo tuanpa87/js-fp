@@ -66,9 +66,11 @@ const curriedDoArray = curry(doArray);
     curriedTotalIt(3)(2)(1),
     curriedDoArray(50));*/
 
-    // let fn1 = curriedTotalIt(5);
-    // console.log(fn1);
-    // let fn2 = fn1(6);
-    // console.log(fn2);
-    // let fn3 = fn2(7);
-    // let fn4 = fn3(8);
+    let fn1 = curriedTotalIt(5);
+    console.log(fn1);
+    let fn2 = fn1(6);
+    console.log(fn2);
+    let fn3 = fn2(7);
+    console.log(fn3);
+    let fn4 = fn3(8);
+    console.log(fn4);
