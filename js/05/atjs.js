@@ -59,3 +59,15 @@ const curry = (fn, arity = fn.length, nextCurried) =>
 //     [...prevArgs, nextArg].length >= arity
 //       ? fn(...[...prevArgs, nextArg])
 //       : nextCurried([...prevArgs, nextArg]))([]);
+
+
+// const curry = (fn, arity = fn.length) => {
+//   let nextCurried
+//    return (nextCurried = prevArgs => nextArg => {
+//     var args = [...prevArgs, nextArg];
+//     console.log(args);
+//     return args.length >= arity
+//       ? fn(...args)
+//       : nextCurried(args);
+//   })([]);
+// }

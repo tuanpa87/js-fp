@@ -43,6 +43,7 @@ const doubleNum = function(num) {
 };
 
 const totalIt = function(n1, n2, n3, n4) {
+    //console.log(n1, n2, n3, n4)
   return n1 + n2 + n3 + n4;
 };
 
